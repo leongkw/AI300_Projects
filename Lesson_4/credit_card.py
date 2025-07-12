@@ -75,3 +75,26 @@ print(dogcard.check_balance())
 
 dogcard.make_payment(100)
 print(dogcard.check_balance())
+
+# my_credit_card = CreditCard(123456789, 5000)
+# assert my_credit_card.cc_number == 123456789
+# assert my_credit_card.check_balance() == 0
+# assert my_credit_card.check_credit_limit() == 5000
+
+# my_credit_card.set_new_credit_limit(1000)
+# my_credit_card.set_new_credit_limit(-1)       # print error
+# my_credit_card.set_new_credit_limit(100001)   # print error
+# assert my_credit_card.check_credit_limit() == 1000
+
+# my_credit_card.make_purchase(900)
+# my_credit_card.make_purchase(-1)          # print error
+# my_credit_card.make_purchase(200)         # print error
+# assert my_credit_card.check_balance() == 900
+
+# my_credit_card.make_payment(500)
+# assert my_credit_card.check_balance() == 400
+
+# my_credit_card.make_payment(5000)
+# assert my_credit_card.check_balance() == 0
+
+# print("All tests passed!")
