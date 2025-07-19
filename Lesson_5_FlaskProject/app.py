@@ -19,6 +19,9 @@ def login():
 def stock_details(ticker):
     stock_info = stock_data.get(ticker)
 
+    # Should do this way to get the symbol out because you don't have to modify the database
+    # stock_info['symbol] = ticker
+
     return render_template('stock.html', stock=stock_info)
 
 if __name__ == '__main__':
