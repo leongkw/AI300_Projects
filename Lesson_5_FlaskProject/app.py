@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from static.stock_data import stock_data
 
 app = Flask(__name__)
@@ -19,17 +19,7 @@ def login():
 def stock_details(ticker):
     stock_info = stock_data.get(ticker)
 
-    if stock_info:
-        response = f"""
-                    Stock Name: {stock_info['name']}<br>
-                    Current Price: {stock_info['price']}<br>
-                    Market Cap: {stock_info['market_cap']}<br>
-                    Overview: {stock_info['overview']}
-                    """
-    else:
-        response = "Stock info is not found."
-
-    return response
+    return render_template('stock.html', stock=stock_info)
 
 if __name__ == '__main__':
     app.run(debug = True)
